@@ -180,8 +180,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 1112089285}
   - 114: {fileID: 1112089284}
+  - 114: {fileID: 1112089286}
   m_Layer: 0
-  m_Name: Test
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,8 +200,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelSize: 4
-  pathObj: {fileID: 125194, guid: d6d680f3b8e21634cbd9dec30137494f, type: 2}
-  blankObj: {fileID: 160886, guid: 0e7bc9726b0ce014aa02d3d9fb8c42e0, type: 2}
 --- !u!4 &1112089285
 Transform:
   m_ObjectHideFlags: 0
@@ -213,3 +212,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &1112089286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1112089283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e24a7c60ae9063841ac5d19224a60170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blank: {fileID: 160886, guid: 0e7bc9726b0ce014aa02d3d9fb8c42e0, type: 2}
+  dirt: {fileID: 125194, guid: d6d680f3b8e21634cbd9dec30137494f, type: 2}

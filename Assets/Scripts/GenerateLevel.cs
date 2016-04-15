@@ -7,52 +7,21 @@ public class GenerateLevel : MonoBehaviour {
 	[Range(3,8)]
 	public int levelSize = 4;
 
-	public GameObject pathObj;
-	public GameObject blankObj;
-
-	class Room{
-
-		public int type = 0;	//a number from 0-3
-		public int id;		//its pos in the array
-		public bool visited = false;
-		public int x;
-		public int y;
-	};
-
-	Room[,] rooms;
+	public Room[,] rooms;
 	Room endRoom;
 	Room startRoom;
 
 	// Use this for initialization
-	void Start () {
-
-		string p = "";
+	void Awake () {
 
 		rooms = new Room[levelSize,levelSize];
 
 		InitializeRooms();
 
-		//print("In a room of " + levelSize + " size");
-		//print("Try to go right from room " + 2 + " will be " + MoveCheck(2, 0));
-		//print("Try to go left from room " + 5 + " will be " + MoveCheck(5, 1));
-		//print("Try to go down from room " + 10 + " will be " + MoveCheck(10, 2));
-
 		GenerateRoomType();
 
-		for(int i=0;i<rooms.GetLength(0);i++)
-		{
-			for(int j=0;j<rooms.GetLength(1);j++)
-			{
-				p += rooms[i,j].type + " ";
+		PrintDebugRoom();
 
-				if((j + 1) % 4 == 0) p += "\n";
-			}
-				
-		}
-
-		print(p);
-
-		FillRooms();
 	}
 	
 	// Update is called once per frame
@@ -74,26 +43,8 @@ public class GenerateLevel : MonoBehaviour {
 				rooms[i,j].y = i;
 			}
 		}
+			
 
-	}
-
-	void FillRooms()
-	{
-		int i,j;
-		GameObject go;
-
-		for(i=0;i<rooms.GetLength(0);i++)
-		{
-			for(j=0;j<rooms.GetLength(1);j++)
-			{
-				if(rooms[i,j].type == 0) go = (GameObject)Instantiate(blankObj, new Vector3(j,-i,0), Quaternion.identity);
-				else go = (GameObject)Instantiate(pathObj, new Vector3(j,-i,0), Quaternion.identity);
-
-				if(rooms[i,j] == startRoom) go.GetComponent<SpriteRenderer>().color = Color.green;
-
-				if(rooms[i,j] == endRoom) go.GetComponent<SpriteRenderer>().color = Color.red;
-			}
-		}
 	}
 
 	void GenerateRoomType()
@@ -175,11 +126,58 @@ public class GenerateLevel : MonoBehaviour {
 			prevY = roomY;
 		
 		}
-
-		print("the starting room is " + startRoom.id);
-		print("the end room is " + endRoom.id);
 			
 	}
+
+	void PrintDebugRoom()
+	{
+		string p = "";
+
+		for(int i=0;i<rooms.GetLength(0);i++)
+		{
+			for(int j=0;j<rooms.GetLength(1);j++)
+			{
+				p += rooms[i,j].type + " ";
+
+				if((j + 1) % 4 == 0) p += "\n";
+			}
+
+		}
+
+		print(p);
+	}
+
+	public Room GetStartRoom()
+	{
+		return startRoom;
+	}
+
+	public Room GetEndRoom()
+	{
+		return endRoom;
+	}
+
+
+	/*
+	void FillRooms()
+	{
+		int i,j;
+		GameObject go;
+
+		for(i=0;i<rooms.GetLength(0);i++)
+		{
+			for(j=0;j<rooms.GetLength(1);j++)
+			{
+				if(rooms[i,j].type == 0) go = (GameObject)Instantiate(blankObj, new Vector3(j,-i,0), Quaternion.identity);
+				else go = (GameObject)Instantiate(pathObj, new Vector3(j,-i,0), Quaternion.identity);
+
+				if(rooms[i,j] == startRoom) go.GetComponent<SpriteRenderer>().color = Color.green;
+
+				if(rooms[i,j] == endRoom) go.GetComponent<SpriteRenderer>().color = Color.red;
+			}
+		}
+	}
+	*/
 
 }
 
