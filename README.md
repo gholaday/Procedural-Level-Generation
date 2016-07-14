@@ -12,7 +12,7 @@ This way, there will always be a path from the top to the bottom row that you ca
 Eventually I will implement randomness to each prefab room. This works by iterating through each tile, and randomly replacing certain tiles.
 Then of course, enemies, chests and items need to be placed randomly as well. 
 
-As you can see, even from just a handful of prefabs and tilesets I can already generate pretty unique levels.
+As you can see, even from just a handful of prefabs and tilesets I can already generate pretty unique levels. The green rooms is the designated "starting room" and the red is the "ending room".
 
 ![Screenshot1](http://i.imgur.com/mzbsJpo.png)
 
