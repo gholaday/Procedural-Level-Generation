@@ -1,6 +1,8 @@
 # Procedural Level Generation (Spleunky)
 Trying to replicate procedural generation algorithms - starting with Spelunky.
 
+![Spelunky](http://www.spelunkyworld.com/images/spelunky-pc-screen.png)
+
 # How it works
 It is a procedural algorithm that makes a 4x4 levels, 12 "rooms" in all. 
 It starts on the top row and goes from left to right, when it hits a wall, it places a "down" room and moves down, where it then places a up room.
