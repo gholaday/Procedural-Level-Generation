@@ -1,4 +1,4 @@
-# Procedural-Level-Generation
+# Procedural Level Generation (Spleunky)
 Trying to replicate procedural generation algorithms - starting with Spelunky.
 
 # How it works
