@@ -1,5 +1,6 @@
 # Procedural Level Generation (Spleunky)
-Trying to replicate procedural generation algorithms - starting with Spelunky.
+I've always been fascinated with procedural generation in video games. 
+Now I am trying to replicate procedural generation algorithms - starting with Spelunky.
 
 ![Spelunky](http://www.spelunkyworld.com/images/spelunky-pc-screen.png)
 
